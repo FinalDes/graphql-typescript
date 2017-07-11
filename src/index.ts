@@ -2,6 +2,10 @@ import express = require('express');
 import graphqlHTTP = require('express-graphql');
 import {schema} from "./schema";
 
+import dotenv = require("dotenv");
+dotenv.config();
+
+const port:any = Number(process.env.PORT) | 3000;
 const app = express();
 
 app.use('/graphql', graphqlHTTP({
@@ -9,6 +13,6 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true
 }));
 
-app.listen(4000,()=>{
-  console.log("Listening port 4000");
+app.listen(port,()=>{
+  console.log(`Listening port ${port}`);
 });

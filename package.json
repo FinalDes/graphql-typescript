@@ -15,7 +15,9 @@
     "webpack": "^3.1.0"
   },
   "dependencies": {
+    "@types/dotenv": "^4.0.0",
     "@types/express-graphql": "^0.0.33",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
     "graphql": "^0.10.3"
