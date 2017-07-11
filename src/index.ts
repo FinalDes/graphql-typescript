@@ -8,6 +8,7 @@ dotenv.config();
 
 const port:any = PortValidator.validate(process.env.PORT) || 3000;
 const app = express();
+app.disable('x-powered-by');
 
 app.use('/graphql', graphqlHTTP({
   schema,
