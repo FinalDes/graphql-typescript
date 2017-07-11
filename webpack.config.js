@@ -32,6 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    new HelmetWebpackPlugin()
+    // new webpack.optimize.UglifyJsPlugin()
   ],
 };
