@@ -9,7 +9,7 @@
     "start": "node ./dist/index.js",
     "test": "mocha --compilers ts:ts-node/register src/**/*.test.ts",
     "test:coverage": "nyc yarn test",
-    "test:coveralls": "nyc yarn test | coveralls",
+    "test:coveralls": "yarn test:coverage | coveralls",
     "showCoverage": "open coverage/index.html"
   },
   "devDependencies": {
@@ -37,6 +37,9 @@
   "nyc": {
     "include": [
       "src/**/*.ts"
+    ],
+    "exclude":[
+      "src/**/*.test.ts"
     ],
     "extension": [
       ".ts"
