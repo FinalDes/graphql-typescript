@@ -3,9 +3,10 @@ import graphqlHTTP = require('express-graphql');
 import {schema} from "./schema";
 
 import dotenv = require("dotenv");
+import { PortValidator } from './validator/portValidator';
 dotenv.config();
 
-const port:any = Number(process.env.PORT) | 3000;
+const port:any = PortValidator.validate(process.env.PORT) || 3000;
 const app = express();
 
 app.use('/graphql', graphqlHTTP({
