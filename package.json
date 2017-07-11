@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "build:webpack": "rm -rf dist && webpack --config webpack.config.js --progress --profile --bail",
     "start": "node ./dist/index.js",
     "test": "mocha --opts ./mocha.opts",
     "test:coverage": "nyc yarn test",
@@ -20,6 +21,7 @@
     "@types/express-graphql": "^0.0.33",
     "@types/graphql": "^0.9.3",
     "@types/mocha": "^2.2.41",
+    "awesome-typescript-loader": "^3.2.1",
     "chai": "^4.0.2",
     "coveralls": "^2.13.1",
     "mocha": "^3.4.2",
@@ -27,6 +29,7 @@
     "source-map-support": "^0.4.15",
     "ts-node": "^3.2.0",
     "tslint": "^5.5.0",
+    "tslint-loader": "^3.5.3",
     "typescript": "^2.4.1",
     "webpack": "^3.1.0"
   },

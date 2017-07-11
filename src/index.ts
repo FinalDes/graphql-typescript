@@ -1,10 +1,10 @@
-import express = require("express");
-import graphqlHTTP = require("express-graphql");
-import {schema} from "./schema";
-
 /* tslint:disable:no-console*/
 import dotenv = require("dotenv");
 import { PortValidator } from "./validator/portValidator";
+import express = require("express");
+import graphqlHTTP = require("express-graphql");
+
+import {schema} from "./schema";
 dotenv.config();
 
 const port: any = PortValidator.validate(process.env.PORT) || 3000;
