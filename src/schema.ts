@@ -1,21 +1,21 @@
 import {
-    GraphQLString,
     GraphQLObjectType,
-    GraphQLSchema
-} from 'graphql';
+    GraphQLSchema,
+    GraphQLString,
+} from "graphql";
 
 const RootQuery = new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields:{
-        hi:{
+    fields: {
+        hi: {
             type: GraphQLString,
-            resolve(parentValue:any,args:any) {
-                return "Hello Word"
-            }
-        }
-    }
+            resolve(parentValue: any, args: any) {
+                return "Hello Word";
+            },
+        },
+    },
+    name: "RootQueryType",
 });
 
 export const schema = new GraphQLSchema({
-    query: RootQuery
-})
+    query: RootQuery,
+});

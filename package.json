@@ -10,6 +10,7 @@
     "test": "mocha --opts ./mocha.opts",
     "test:coverage": "nyc yarn test",
     "test:coveralls": "yarn test:coverage | coveralls",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "showCoverage": "open coverage/index.html"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "nyc": "^11.0.3",
     "source-map-support": "^0.4.15",
     "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "webpack": "^3.1.0"
   },
@@ -38,7 +40,7 @@
     "include": [
       "src/**/*.ts"
     ],
-    "exclude":[
+    "exclude": [
       "src/**/*.test.ts"
     ],
     "extension": [
