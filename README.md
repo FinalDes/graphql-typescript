@@ -1,0 +1,1 @@
+# Graphql Typescript Demo
