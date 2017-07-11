@@ -9,6 +9,7 @@
     "start": "node ./dist/index.js",
     "test": "mocha --compilers ts:ts-node/register src/**/*.test.ts",
     "test:coverage": "nyc yarn test",
+    "test:coveralls": "nyc yarn test | coveralls",
     "showCoverage": "open coverage/index.html"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
     "@types/graphql": "^0.9.3",
     "@types/mocha": "^2.2.41",
     "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
     "mocha": "^3.4.2",
     "nyc": "^11.0.3",
     "source-map-support": "^0.4.15",
@@ -33,7 +35,7 @@
     "graphql": "^0.10.3"
   },
   "nyc": {
-    "include":[
+    "include": [
       "src/**/*.ts"
     ],
     "extension": [
@@ -44,10 +46,11 @@
     ],
     "reporter": [
       "text-summary",
+      "text-lcov",
       "json",
       "html"
     ],
-    "sourceMap":true,
-    "instrument":true
+    "sourceMap": true,
+    "instrument": true
   }
 }

@@ -2,10 +2,9 @@ language: node_js
 node_js:
   - node
   - "6"
-  - "4"
 script:
   - yarn
-  - yarn test
+  - yarn test:coveralls
 cache:
   yarn: true
   directories:
