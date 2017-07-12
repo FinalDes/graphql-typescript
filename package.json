@@ -10,9 +10,9 @@
     "start": "node ./dist/index.js",
     "test": "mocha --opts ./mocha.opts",
     "test:coverage": "nyc yarn test",
+    "test:coverage:showReport": "yarn test:coverage && open coverage/index.html",
     "test:coveralls": "yarn test:coverage | coveralls",
-    "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-    "showCoverage": "open coverage/index.html"
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
