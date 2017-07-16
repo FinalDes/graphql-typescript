@@ -1,5 +1,16 @@
 const path = require("path");
 const webpack = require('webpack');
+const fs = require('fs');
+const BabiliPlugin = require("babili-webpack-plugin");
+
+let nodeModules = {};
+fs.readdirSync('node_modules')
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
 
 module.exports = {
   target: "node",
@@ -31,8 +42,9 @@ module.exports = {
       },
     ],
   },
+  externals: nodeModules,
   plugins: [
-    new HelmetWebpackPlugin()
+    new BabiliPlugin()
     // new webpack.optimize.UglifyJsPlugin()
   ],
 };
