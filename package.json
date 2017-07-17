@@ -5,8 +5,7 @@
   "author": "Alex Alonso <alex4551@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "build:webpack": "rm -rf dist && webpack --config webpack.config.js --progress --profile --bail",
+    "build": "rm -rf dist && webpack --config webpack.config.js --progress --profile --bail",
     "start": "node ./dist/index.js",
     "test": "mocha --opts ./mocha.opts",
     "test:coverage": "nyc yarn test",
