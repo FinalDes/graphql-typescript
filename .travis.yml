@@ -4,6 +4,7 @@ node_js:
   - "6"
 script:
   - yarn
+  - yarn eslint
   - yarn tslint
   - yarn test:coveralls
 cache:
