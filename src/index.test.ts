@@ -2,6 +2,8 @@
 import request = require("supertest");
 import {App} from "./index";
 
+const result = {data: {hi: "Hello Word"}};
+
 describe("Graphql test", () => {
   it("Get Hi, content-type application/json", (done) => {
     request(App)
@@ -10,7 +12,7 @@ describe("Graphql test", () => {
     .send({query: "{hi}"})
     .expect(200)
     .end((err, res) => {
-      res.body.should.to.deep.equal({data: {hi: "Hello Word"}});
+      res.body.should.to.deep.equal(result);
       done();
     });
   });
@@ -21,7 +23,7 @@ describe("Graphql test", () => {
     .send({query: "{hi}"})
     .expect(200)
     .end((err, res) => {
-      res.body.should.to.deep.equal({data: {hi: "Hello Word"}});
+      res.body.should.to.deep.equal(result);
       done();
     });
   });
@@ -32,7 +34,7 @@ describe("Graphql test", () => {
     .send("{hi}")
     .expect(200)
     .end((err, res) => {
-      res.body.should.to.deep.equal({data: {hi: "Hello Word"}});
+      res.body.should.to.deep.equal(result);
       done();
     });
   });
