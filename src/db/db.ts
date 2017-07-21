@@ -3,8 +3,7 @@ import mongoose = require("mongoose");
 import dotenv = require("dotenv");
 dotenv.config();
 mongoose.Promise = global.Promise;
-const MONGO_URI = `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}`;
-console.log(MONGO_URI);
+export const MONGO_URI = `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}`;
 
 mongoose.connect(MONGO_URI, {
     useMongoClient: true,
@@ -14,7 +13,7 @@ mongoose.connect(MONGO_URI, {
 //     name: String,
 // }));
 
-// const user1 = new User({name: "alex"});
+// const user1 = new User({name: "alex",password:"123"});
 
 // user1.save((err) => {
 //     if (err) {

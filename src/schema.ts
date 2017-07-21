@@ -1,7 +1,9 @@
-/* tslint:disable:no-console*/
+/* tslint:disable:no-console, object-literal-sort-keys*/
 import {
     GraphQLID,
+    GraphQLInt,
     GraphQLList,
+    GraphQLNonNull,
     GraphQLObjectType,
     GraphQLSchema,
     GraphQLString,
@@ -13,7 +15,10 @@ const User = new GraphQLObjectType({
         id: {
             type: GraphQLID,
         },
-        name: {
+        email: {
+            type: GraphQLString,
+        },
+        password: {
             type: GraphQLString,
         },
     },
@@ -23,11 +28,20 @@ const User = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     fields: {
         getUsers: {
+             args: {
+                 limit: {type: GraphQLInt},
+                },
             type: new GraphQLList(User),
             resolve(parentValue: any, args: any) {
-                return Users.find().exec((err, doc) => {
-                    console.log(doc);
-                });
+                const limit: number = args.limit && args.limit < 15 ? args.limit : 5;
+                return Users.find().limit(limit).exec();
+            },
+        },
+        getUser: {
+            args: {id: {type: new GraphQLNonNull(GraphQLString)}},
+            type: User,
+            resolve(parentValue: any, args: any) {
+                return Users.findById(args.id).exec();
             },
         },
     },
