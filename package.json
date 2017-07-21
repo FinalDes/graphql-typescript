@@ -5,7 +5,7 @@
   "author": "Alex Alonso <alex4551@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && webpack --config webpack.config.js --progress --profile --bail",
+    "build": "del-cli dist && webpack --config webpack.config.js --progress --profile --bail",
     "eslint": "eslint -c .eslintrc.js webpack.config.js",
     "github": "open https://github.com/FinalDes/graphql-typescript",
     "start": "nodemon --config nodemon.json",
