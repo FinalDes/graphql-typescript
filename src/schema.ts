@@ -30,11 +30,12 @@ const RootQuery = new GraphQLObjectType({
         getUsers: {
              args: {
                  limit: {type: GraphQLInt},
+                 email: {type: GraphQLString},
                 },
             type: new GraphQLList(User),
             resolve(parentValue: any, args: any) {
                 const limit: number = args.limit && args.limit < 15 ? args.limit : 5;
-                return Users.find().limit(limit).exec();
+                return Users.find({email: args.email}).limit(limit).exec();
             },
         },
         getUser: {
