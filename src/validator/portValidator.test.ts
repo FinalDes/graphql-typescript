@@ -5,7 +5,6 @@ const alternative = 3000;
 describe("Validate Port Number", () => {
     it("alternative port number should be valid", () => {
         expect(PortValidator.validate(alternative)).toBe(alternative);
-        // PortValidator.validate(alternative).should.be.equal(alternative);
     });
     it("3000 return 3000", () => {
         expect(PortValidator.validate(3000)).toBe(3000);
