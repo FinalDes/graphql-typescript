@@ -9,7 +9,7 @@ export function createUser(parentValue: any, args: any) {
     return newUser.save();
 }
 
-export function login(parentValue: any, {email, password}: {email: string, password: string}){
+export function login(parentValue: any, {email, password}: {email: string, password: string}) {
     const result = Users.findOne({email}).exec()
         .then((user: any) => {
             // console.log(user);
