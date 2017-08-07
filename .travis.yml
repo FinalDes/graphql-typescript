@@ -6,7 +6,6 @@ script:
   - yarn
   - yarn eslint
   - yarn tslint
-  - yarn test:coveralls
 cache:
   yarn: true
   directories:

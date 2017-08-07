@@ -1,10 +1,12 @@
 /* tslint:disable:no-console*/
 import {Schema} from "mongoose";
-import mongoose from "./db";
+import mongoose from "./../../db";
 
 export const Users = mongoose.model("Users", new Schema({
-    email: String,
+    email: {type: String, index: {unique: true}},
     password: String,
+}, {
+    timestamps: true,
 }));
 
 // const user1 = new Users({email: "alex", password: "123"});

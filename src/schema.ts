@@ -8,16 +8,7 @@ import {
     GraphQLSchema,
     GraphQLString,
 } from "graphql";
-import {Users} from "./db/user.model";
-
-const UserSchema = new GraphQLObjectType({
-    name: "User",
-    fields: {
-        id: {type: GraphQLID},
-        email: {type: GraphQLString},
-        password: {type: GraphQLString},
-    },
-});
+import {Users, UserSchema} from "./schema/user";
 
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
