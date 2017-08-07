@@ -6,6 +6,7 @@ script:
   - yarn
   - yarn lint:js
   - yarn lint:ts
+  - yarn build
 cache:
   yarn: true
   directories:

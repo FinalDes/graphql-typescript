@@ -35,4 +35,5 @@ jobs:
       # run tests!
       - run: yarn lint:js
       - run: yarn lint:ts
+      - run: yarn build
 
