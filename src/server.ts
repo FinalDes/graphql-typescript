@@ -3,9 +3,9 @@ import app from "./app";
 
 import dotenv = require("dotenv");
 dotenv.config();
-import { PortValidator } from "./validator/portValidator";
+import { normalizePort } from "uri-builder";
 
-const PORT: any = PortValidator.validate(process.env.PORT, 3000);
+const PORT: any = normalizePort(process.env.PORT || 3000);
 app.listen(PORT, () => {
   console.log(`GraphQL Server is now running on http://localhost:${PORT}/graphql`);
 });
