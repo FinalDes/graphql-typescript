@@ -47,11 +47,13 @@
   },
   "dependencies": {
     "@types/mongoose": "^4.7.19",
+    "bcrypt": "^1.0.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
     "graphql": "^0.10.3",
     "helmet": "^3.6.1",
+    "jsonwebtoken": "^7.4.2",
     "mongoose": "^4.11.3",
     "uri-builder": "^1.0.3"
   },

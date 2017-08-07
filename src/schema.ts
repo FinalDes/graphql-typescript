@@ -8,7 +8,7 @@ import {
     GraphQLSchema,
     GraphQLString,
 } from "graphql";
-import {Users, UserSchema} from "./schema/user";
+import {createUser, login, Users, UserSchema} from "./schema/user";
 
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
@@ -44,10 +44,15 @@ const mutation = new GraphQLObjectType({
                 password: {type: new GraphQLNonNull(GraphQLString)},
             },
             type: UserSchema,
-            resolve(parentValue: any, args: any) {
-                const newUser = new Users(args);
-                return newUser.save();
+            resolve: createUser,
+        },
+        login: {
+            args: {
+                email: {type: new GraphQLNonNull(GraphQLString)},
+                password: {type: new GraphQLNonNull(GraphQLString)},
             },
+            type: UserSchema,
+            resolve: login,
         },
     },
 });
