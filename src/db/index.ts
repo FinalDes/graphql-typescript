@@ -1,6 +1,6 @@
 /* tslint:disable:no-console*/
-import mongoose = require("mongoose");
 import dotenv = require("dotenv");
+import mongoose = require("mongoose");
 import {normalizeMongoURI} from "uri-builder";
 dotenv.config();
 mongoose.Promise = global.Promise;

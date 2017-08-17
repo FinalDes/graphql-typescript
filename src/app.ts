@@ -1,6 +1,6 @@
 import express = require("express");
-import helmet = require("helmet");
 import graphqlHTTP = require("express-graphql");
+import helmet = require("helmet");
 
 import {schema} from "./schema";
 
